@@ -14,3 +14,6 @@ https://betterprogramming.pub/archive?source=post_page-----b57c979341a5---------
 ### 执行上下文
 https://blog.bitsrc.io/understanding-execution-context-and-execution-stack-in-javascript-1c9ea8642dd0
 
+### 作用域 scope
+https://scotch.io/tutorials/understanding-scope-in-javascript
+
