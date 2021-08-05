@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // SelfBind
+    console.log('=====================================SelfBind');
+    var objA = { getName: function () { console.log(this.name) } }
+    var objB = { name: 'objB' }
+    function SelfBind(obj, thisObj) {
+      return function () {
+        return obj.getName.call(thisObj)
+      }
+    }
+    var demoBind = SelfBind(objA, objB)
+    demoBind()
+
+    // this in obj.method
+    console.log('=====================================this in obj.method');
+    window.name = 'globalName'
+    var a = {
+      name: 'a',
+      getName() {
+        console.log(this.name)
+      }
+    }
+    var objA = {
+      name: 'objA',
+      methodA(arg) {
+        /* 
+         * arg在对象方法中调用等同于函数嵌套，调用内部函数
+         * 所以执行上下文为全局对象,this指向window或undefined
+         */
+        arg()
+      }
+    }
+    objA.methodA(a.getName)  // 'globalName'
+  </script>
+</body>
+
+</html>

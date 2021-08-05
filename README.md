@@ -14,6 +14,8 @@ https://betterprogramming.pub/archive?source=post_page-----b57c979341a5---------
 ### 执行上下文
 https://blog.bitsrc.io/understanding-execution-context-and-execution-stack-in-javascript-1c9ea8642dd0
 
-### 作用域 scope
+### 作用域scope
 https://scotch.io/tutorials/understanding-scope-in-javascript
 
+### this关键字  
+https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/
