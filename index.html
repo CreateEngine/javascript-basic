@@ -9,6 +9,10 @@
 </head>
 
 <body>
+  <button id="myButton">My Button</button>
+  <div id="myText">Clicked 0 times</div>
+  <div id="timeText">Times: 0 times</div>
+  <div id="countEvenText">CountEven: 0 times</div>
   <script>
     // SelfBind
     console.log('=====================================SelfBind');
@@ -42,6 +46,52 @@
       }
     }
     objA.methodA(a.getName)  // 'globalName'
+
+    // closure
+    console.log('=====================================closure');
+    // scene1
+    function closureDomEvent() {
+      let countClicked = 0;
+      myButton.addEventListener('click', function handleClick() {
+        countClicked++;
+        myText.innerText = `Clicked ${countClicked} times`;
+      });
+    }
+    closureDomEvent();
+    // scene 2
+    function closureTimer() {
+      let times = 0;
+      for (let i = 1; i < 4; i++) {
+        setTimeout(() => {
+          times++;
+          timeText.innerText = `times: ${times} times`;
+        }, 1000 * i)
+      }
+    }
+    closureTimer();
+    // scene 3
+    function closureIterator() {
+      let countEven = 0;
+      const items = [1, 5, 100, 10];
+      items.forEach(function iterator(number) {
+        if (number % 2 === 0) {
+          countEven++
+        }
+        countEvenText.innerText = `CountEven：${countEven} times`;
+      })
+    }
+    closureIterator();
+    // scene 4
+    function multiply(a) {
+      return function executeMultiply(b) {
+        return a * b;
+      }
+    }
+    const double = multiply(2);
+    double(3); // => 6
+    double(5); // => 10
+    const triple = multiply(3);
+    triple(4); // => 12
   </script>
 </body>
 
