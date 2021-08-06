@@ -19,3 +19,6 @@ https://scotch.io/tutorials/understanding-scope-in-javascript
 
 ### this关键字  
 https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/
+
+### 闭包closures
+https://dmitripavlutin.com/simple-explanation-of-javascript-closures/
